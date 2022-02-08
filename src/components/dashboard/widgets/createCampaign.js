@@ -8,7 +8,8 @@ async function storeCampaign() {
 		"http://localhost:9898/api/createcampaign",
 		{
 			method: "POST",
-			headers: { "Content-Type": "application/json" },
+			headers: { "Content-Type": "application/json",
+			'Authorization':'Bearer '+localStorage.getItem('token')},
 			body: JSON.stringify({ campaign: input.value }),
 		}
 	);
